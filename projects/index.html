@@ -1,0 +1,20 @@
+---
+layout: page
+title: Projects
+background: '/img/bg-projects.png'
+---
+
+{% for item in site.projects %}
+<article class="post-preview">
+  <a href="{{ item.url }}">
+    <h2 class="post-title">{{ item.title }}</h2>
+    <h3 class="post-subtitle">{{ item.subtitle }}</h3>
+    <h3 class="post-subtitle">{{ item.excerpt | strip_html | truncatewords: 15 }}</h3>
+  </a>
+  <p class="post-meta">{{ item.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=item.content %}
+  </p>
+</article>
+
+<hr>
+
+{% endfor %}
