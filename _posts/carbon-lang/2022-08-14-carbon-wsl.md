@@ -54,7 +54,7 @@ su -l your_username
 ```
 You should see something like that from the terminal:
 
-<img src="/img/posts/2022-08-14-carbon-wsl/ps-wsl-user.jpg" width="710"/>
+<img src="/img/posts/2022-08-14-carbon-wsl/ps-wsl-user.png" width="710"/>
 
 
 #### 2. Install Homebrew
@@ -122,7 +122,7 @@ As stated in the article mentioned earlier, the meaning of this line is to
 
 At this point, you should see the output displayed on the terminal:
 
-<img src="/img/posts/2022-08-14-carbon-wsl/carbon-hello-world.jpg" width="710"/>
+<img src="/img/posts/2022-08-14-carbon-wsl/carbon-hello-world.png" width="710"/>
 
 
 #### 4. Programming in Carbon using VS Code
@@ -131,7 +131,7 @@ Another cool feature of the WSL is that you can easily [connect VS Code](https:/
 
 Open VS Code and install the *Remote Development* pack from the marketplace.
 
-<p style="text-align:center;"><img src="/img/posts/2022-08-14-carbon-wsl/remote-dev.jpg" width="360"/></p>
+<p style="text-align:center;"><img src="/img/posts/2022-08-14-carbon-wsl/remote-dev.png" width="360"/></p>
 
 Now the *Remote Explorer* tab is available:
 
@@ -145,13 +145,13 @@ Now the *Remote Explorer* tab is available:
 
 1. From the new VS Code window, open the `/home/your_username/carbon-lang/` folder.
 
-    <img src="/img/posts/2022-08-14-carbon-wsl/open-folder.jpg" width="700"/>
+    <img src="/img/posts/2022-08-14-carbon-wsl/open-folder.png" width="700"/>
 
 1. From the *Explorer* tab open the `/explorer/testdata/print/format_only.carbon` file to edit the *Hello, World!* program. For instance, I have changed the string to `"Hello Cristiano!"`
 
 1. To run the code, type again the command `bazel run //explorer -- ./explorer/testdata/print/format_only.carbon` in the VS Code terminal.
 
-    <img src="/img/posts/2022-08-14-carbon-wsl/run-vs-code.jpg" width="700"/>
+    <img src="/img/posts/2022-08-14-carbon-wsl/run-vs-code.png" width="700"/>
 
 Now you are ready to experiment with the Carbon language using VS Code directly from your Windows machine thanks to WSL.
 
