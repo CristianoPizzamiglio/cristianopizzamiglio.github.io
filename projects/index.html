@@ -4,7 +4,7 @@ title: Projects
 background: '/img/bg-projects.png'
 ---
 
-{% for item in site.projects %}
+{% for item in site.projects reversed  %}
 <article class="post-preview">
   <a href="{{ item.url }}">
     <h2 class="post-title">{{ item.title }}</h2>
