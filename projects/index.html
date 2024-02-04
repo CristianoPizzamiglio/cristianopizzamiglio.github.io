@@ -11,8 +11,14 @@ background: '/img/bg-projects.png'
     <h3 class="post-subtitle">{{ item.subtitle }}</h3>
     <h3 class="post-subtitle">{{ item.excerpt | strip_html | truncatewords: 15 }}</h3>
   </a>
-  <p class="post-meta">{{ item.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=item.content %}
-  </p>
+  <p class="post-meta">{{ item.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=item.content %}</p>
+  {% if item.tags %}
+  <a class="post-tags">
+    {% for tag in item.tags %}
+      <span class="tag">{{ tag }}</span>{% unless forloop.last %}{% endunless %}
+    {% endfor %}
+  </a>
+  {% endif %}
 </article>
 
 <hr>

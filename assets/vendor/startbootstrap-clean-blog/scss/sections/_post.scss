@@ -19,6 +19,18 @@
             font-weight: 300;
             margin: 0 0 10px;
         }
+
+        >.tag {
+            display: inline-block;
+            background-color: #f2f2f2;
+            color: $gray-600;
+            padding: 3px 8px;
+            margin-right: 5px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: default;
+        }
     }
 
     >.post-meta {
