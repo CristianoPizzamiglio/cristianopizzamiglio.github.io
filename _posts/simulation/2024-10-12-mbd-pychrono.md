@@ -31,6 +31,8 @@ A [rich gallery of videos](https://projectchrono.org/gallery/) showcases the ama
 
 Creating from scratch a multibody model with PyChrono could be a little intimidating at first. The aim of this post is to guide the reader through the development of a simple four-wheeled vehicle, where each wheel operates independently and is powered by its own motor. The code repository is available [here](https://github.com/CristianoPizzamiglio/multibody-dynamics-pychrono) and can serve as a template for developing more complex models. The codebase is well-structured into several modules and the object-oriented programming paradigm (OOP) is adopted. Moreover, type hints are provided to improve code readability and maintainability. Therefore, basic knowledge of the Python programming language and OOP is required.
 
+The content of this post has also been transformed into an AI-generated podcast, powered by the amazing [Google NotebookLM](https://notebooklm.google/). The podcast is available [here](https://notebooklm.google.com/notebook/e259b315-8516-4a23-8603-d56bf3c81d5c/audio).
+
 To get started, PyChrono can be easily installed using [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html), and all the installation details are available [here](https://api.projectchrono.org/pychrono_installation.html). Moreover, the repository includes the `environment.yml` file for creating the conda environment.
 
 The structure of the repository is as follows:
