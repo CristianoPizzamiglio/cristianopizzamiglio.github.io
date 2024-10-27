@@ -53,6 +53,7 @@ repo/
 │   └── vehicle.py
 ├── .gitignore
 ├── environment.yml
+├── LICENSE
 └── README.md
 ```
 
