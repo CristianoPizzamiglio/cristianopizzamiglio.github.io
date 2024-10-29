@@ -29,7 +29,7 @@ A [rich gallery of videos](https://projectchrono.org/gallery/) showcases the ama
 <iframe width="640" height="360" src="https://www.youtube.com/embed/z-1H5csiAKc" title="126 Tibiofemoral Joint Simulation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-Creating from scratch a multibody model with PyChrono could be a little intimidating at first. The aim of this post is to guide the reader through the development of a simple four-wheeled vehicle, where each wheel operates independently and is powered by its own motor. The code repository is available [here](https://github.com/CristianoPizzamiglio/multibody-dynamics-pychrono) and can serve as a template for developing more complex models. The codebase is well-structured into several modules and the object-oriented programming paradigm (OOP) is adopted. Moreover, type hints are provided to improve code readability and maintainability. Therefore, basic knowledge of the Python programming language and OOP is required.
+Creating from scratch a multibody model with PyChrono could be a little intimidating at first. With this post I would like to guide you through the development of a simple four-wheeled vehicle, where each wheel operates independently and is powered by its own motor. The code repository is available [here](https://github.com/CristianoPizzamiglio/multibody-dynamics-pychrono) and can serve as a template for developing more complex models. The codebase is well-structured into several modules and the object-oriented programming paradigm (OOP) is adopted. Moreover, type hints are provided to improve code readability and maintainability. Therefore, basic knowledge of the Python programming language and OOP is required.
 
 The content of this post has also been transformed into an AI-generated podcast, powered by the amazing [Google NotebookLM](https://notebooklm.google/). The podcast is available [here](https://notebooklm.google.com/notebook/e259b315-8516-4a23-8603-d56bf3c81d5c/audio).
 
@@ -369,4 +369,4 @@ A gif of the vehicle moving at constant speed on a straight line is showed below
 
 Finally, configuring the `mode` parameter to 0 in the `simulation_params.yaml` file allows the model to be displayed during construction without starting the simulation.
 
-For further assistance on the repository, feel free to open an issue on GitHub.
+I hope this post was helpful and encourages you to develop your own amazing multibody models! For further assistance on the repository, feel free to contact me.
