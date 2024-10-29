@@ -7,6 +7,7 @@ group :jekyll_plugins do
   gem "jekyll-paginate", "~> 1.1.0"
   gem "jekyll-sitemap"
   gem "webrick"
+  gem "jekyll-scholar"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -17,12 +17,13 @@ google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
 # Build settings
 markdown:           kramdown
-paginate:           5
+paginate:           20
 paginate_path:      "/posts/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-scholar
 
 collections:
   projects:
@@ -30,3 +31,10 @@ collections:
   philanthropy:
     output: true
 highlighter: rouge
+
+scholar:
+  style: apa
+  details_link: bib.html
+  citation_link: true
+  in_text_cite:
+    suppress_parens: true
