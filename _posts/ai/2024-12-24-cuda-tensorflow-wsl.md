@@ -208,5 +208,11 @@ On the contrary, an empty list will be printed.
 
 To leverage a Python interpreter available through WSL, PyCharm Professional Edition is required (a 30-day trail version can be downloaded). Go to `Settings | Project | Python Interpreter`, click the `Add Interpreter` link, select `On WSL`, and wait until introspection is completed. Read [here](https://www.jetbrains.com/help/pycharm/using-wsl-as-a-remote-interpreter.html#configure-wsl) for further details.
 
+If your codebase relies on environment variables defined in Windows, then go to `Run | Edit Configuration` and in the `Environment variables` field add the variable names and their corresponding values. For instance, if you have a variable `MY_ENV_VAR` whose value is a Windows path folder, then type the following:
+```bash
+MY_ENV_VAR=/mnt/c/Users/jane.doe/windows/folder
+```
+Note that `C:` has been replaced with `/mnt/c/`.
+
 
 Now you are ready to develop and train your neural networks in PyCharm using TensorFlow, and harness the power of your NVIDIA GPU directly from your Windows machine thanks to WSL.
