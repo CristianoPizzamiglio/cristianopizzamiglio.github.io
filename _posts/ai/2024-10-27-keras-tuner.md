@@ -376,5 +376,5 @@ Finally, the simple and pre-trained models with optimal hyperparameters were tes
 You should now have a clearer understanding of how to use KerasTuner for the hyperparameter tuning of a machine learning model. If you need help, feel free to contact me, for instance by opening an issue on GitHub.
 
 ## References
-{% bibliography %}
+{% bibliography --cited %}
 
