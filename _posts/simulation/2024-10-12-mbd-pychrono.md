@@ -13,7 +13,7 @@ Chrono was released as [open-source](https://github.com/projectchrono) in 2013 u
 As stated in its website, Chrono allows to
 > simulate, for instance, wheeled and tracked vehicles operating on deformable terrains, robots, mechatronic systems, compliant mechanisms, and fluid solid interaction phenomena. Systems can be made of rigid and flexible/compliant parts with constraints, motors and contacts; parts can have three-dimensional shapes for collision detection.
 
-A [rich gallery of videos](https://projectchrono.org/gallery/) showcases the amazing projects developed with Chrono. Three videos are embedded below.
+A [rich gallery of videos](https://projectchrono.org/gallery/) showcases the amazing projects developed with Chrono. Four videos are embedded below.
 * Three lunar rovers interacting with granular material under Moon gravity.
 <div style="text-align: center;">
 <iframe width="640" height="360" src="https://www.youtube.com/embed/Oi9gBdyUirg" title="Bulldozing simulation of Moon VIPER rovers on a crater with a straight blade under Earth gravity" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -27,6 +27,11 @@ A [rich gallery of videos](https://projectchrono.org/gallery/) showcases the ama
 * Tibiofemoral joint simulation during the gait motion. The articular surfaces are modeled with nonlinear shell elements.
 <div style="text-align: center;">
 <iframe width="640" height="360" src="https://www.youtube.com/embed/z-1H5csiAKc" title="126 Tibiofemoral Joint Simulation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+* Curiosity rover moving on rigid soil.
+<div style="text-align: center;">
+<iframe width="852" height="480" src="https://www.youtube.com/embed/Lu1TlBb7AzI" title="Curiosity Rover - PyChrono Example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 Creating from scratch a multibody model with PyChrono could be a little intimidating at first. With this post I would like to guide you through the development of a simple four-wheeled vehicle, where each wheel operates independently and is powered by its own motor. The code repository is available [here](https://github.com/CristianoPizzamiglio/multibody-dynamics-pychrono) and can serve as a template for developing more complex models. The codebase is well-structured into several modules and the object-oriented programming paradigm (OOP) is adopted. Moreover, type hints are provided to improve code readability and maintainability. Therefore, basic knowledge of the Python programming language and OOP is required.
