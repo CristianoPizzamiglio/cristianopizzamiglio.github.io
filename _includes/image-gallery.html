@@ -1,27 +1,203 @@
 <style>
-    .image-gallery {overflow: auto; margin-left: -1%!important;}
-    .image-gallery a {float: left; display: block; margin: 0 0 1% 1%; width: 19%; text-align: center; text-decoration: none!important;}
-    .image-gallery a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
-    .image-gallery a img {width: 100%; display: block;}
-  </style>
+  .image-gallery {
+    overflow: auto;
+    margin-left: -1%!important;
+  }
+  .image-gallery a {
+    float: left;
+    display: block;
+    margin: 0 0 1% 1%;
+    width: 19%;
+    text-align: center;
+    text-decoration: none!important;
+    position: relative;
+  }
+  .image-gallery a span {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 3px 0;
+    text-align: center !important;
+  }
+  .image-gallery a img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+  }
+  .image-gallery a img:hover {
+    transform: scale(1.03);
+  }
 
-  <div class="image-gallery">
+  .image-gallery a.video-item::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding-left: 4px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  .image-gallery a.video-item:hover::after {
+    background: rgba(255, 0, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .image-gallery a {
+      width: 31%;
+    }
+    .image-gallery a img {
+      height: 120px;
+    }
+  }
+  @media (max-width: 480px) {
+    .image-gallery a {
+      width: 48%;
+    }
+    .image-gallery a img {
+      height: 100px;
+    }
+  }
+
+  .glightbox-container .gslide-description,
+  .glightbox-clean .gslide-description,
+  .glightbox-modern .gslide-description {
+    position: absolute !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    max-width: 80% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    z-index: 10;
+    animation: captionFadeIn 0.5s ease-out;
+  }
+
+  .glightbox-container .gslide-description .gdesc-inner,
+  .glightbox-clean .gslide-description .gdesc-inner,
+  .glightbox-modern .gslide-description .gdesc-inner {
+    display: inline-block !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px !important;
+    padding: 8px 20px !important;
+    margin: 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .glightbox-container .gslide-description .gslide-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #ffffff !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: none !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .glightbox-container .gslide-description .gslide-desc {
+    display: none !important;
+  }
+
+  .glightbox-container .gslide-media {
+    position: relative !important;
+  }
+
+  @keyframes captionFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  .glightbox-container .gslide-description .gdesc-inner:hover,
+  .glightbox-clean .gslide-description .gdesc-inner:hover,
+  .glightbox-modern .gslide-description .gdesc-inner:hover {
+    background: rgba(0, 0, 0, 0.75) !important;
+    transition: background 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .glightbox-container .gslide-description,
+    .glightbox-clean .gslide-description,
+    .glightbox-modern .gslide-description {
+      bottom: 15px !important;
+      max-width: 90% !important;
+    }
+
+    .glightbox-container .gslide-description .gdesc-inner,
+    .glightbox-clean .gslide-description .gdesc-inner,
+    .glightbox-modern .gslide-description .gdesc-inner {
+      padding: 6px 15px !important;
+    }
+
+    .glightbox-container .gslide-description .gslide-title {
+      font-size: 13px !important;
+    }
+  }
+</style>
+
+{%- assign gallery_id = include.gallery | default: include.folder | slugify -%}
+<div class="image-gallery">
   {% for file in site.static_files %}
     {% if file.path contains include.folder %}
       {% if file.extname == '.png' or
-        file.extname == '.jpg' or
-        file.extname == '.jpeg' or
-        file.extname == '.JPG' or
-        file.extname == '.JPEG' %}
-
+            file.extname == '.jpg' or
+            file.extname == '.jpeg' or
+            file.extname == '.JPG' or
+            file.extname == '.JPEG' %}
         {% assign filenameparts = file.path | split: "/" %}
         {% assign filename = filenameparts | last | replace: file.extname,"" %}
-
-        <a href="{{ file.path }}" title="{{ filename }}">
-          <img src="//images.weserv.nl/?url=cristianopizzamiglio.github.io/{{ file.path }}&w=300&h=300&output=png&q=50&t=square"/>
+        <a href="{{ file.path }}"
+           class="glightbox"
+           data-gallery="{{ gallery_id }}"
+           data-title="{{ filename }}">
+          <img src="{{ file.path }}"
+               alt="{{ filename }}"
+               loading="lazy" />
           <span class="caption text-muted">{{ filename }}</span>
         </a>
       {% endif %}
     {% endif %}
   {% endfor %}
-  </div>
+
+  {% if include.videos %}
+    {% for video in include.videos %}
+      <a href="https://www.youtube.com/watch?v={{ video.id }}"
+         class="glightbox video-item"
+         data-gallery="{{ gallery_id }}"
+         data-title="{{ video.title | default: 'Video' }}">
+        <img src="https://img.youtube.com/vi/{{ video.id }}/mqdefault.jpg"
+             alt="{{ video.title | default: 'Video' }}"
+             loading="lazy" />
+        <span class="caption text-muted">{{ video.title | default: 'Video' }}</span>
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
