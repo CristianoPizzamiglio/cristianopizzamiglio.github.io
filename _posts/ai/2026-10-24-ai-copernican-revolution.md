@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "The Copernican Revolution of Intelligence "
+title: "The Copernican Revolution of Intelligence [Work in Progress]"
 date: 2026-10-24 00:00:00 -0400
 ---
-*Work in progress*
 
 In a recent [interview](https://youtu.be/YNH6lwcXw7M?si=6Tl6fkPgzIHCQeQy), [Terence Tao](https://en.wikipedia.org/wiki/Terence_Tao) stated the following:
 
